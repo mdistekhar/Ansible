@@ -13,3 +13,10 @@ Ansible has been installed successfully and is working as expected.
 ### Verification Command
 ```bash
 ansible --version
+
+Verified Output
+
+ansible [core 2.20.1]
+config file = /etc/ansible/ansible.cfg
+executable location = /usr/bin/ansible
+python version = 3.12.3
