@@ -1,38 +1,40 @@
-# Ansible
-✅ Perfect — Ansible is installed correctly and fully working.
+Ansible Setup & Verification Guide
+Overview
 
-Let’s break down what this confirms and what you should do next.
+This repository documents the successful installation and initial verification of Ansible on an Ubuntu system, along with the recommended next steps to prepare managed nodes for automation tasks such as Docker installation.
 
-What This Output Confirms
+✅ Ansible Installation Status
+
+Ansible has been installed correctly and is fully operational.
+
+Verified Output
+ansible --version
+
 ansible [core 2.20.1]
+config file = /etc/ansible/ansible.cfg
+executable location = /usr/bin/ansible
+python version = 3.12.3
 
+What This Confirms
 
 ✔ Latest Ansible core installed
 
-config file = /etc/ansible/ansible.cfg
+✔ Global configuration file present (/etc/ansible/ansible.cfg)
 
+✔ Ansible binary available system-wide
 
-✔ Ansible configuration file exists (good sign)
+✔ Compatible Python version installed
 
-executable location = /usr/bin/ansible
+🎉 The control node is ready for automation.
 
+📌 Recommended Next Steps
+1️⃣ Create or Verify Inventory File
 
-✔ Ansible binary is available system-wide
+Open the default Ansible inventory file:
 
-python version = 3.12.3
-
-
-✔ Compatible Python version
-
-Everything is set up correctly 🎉
-
-Recommended Next Steps (In Order)
-1️⃣ Check / Create Inventory File
 sudo nano /etc/ansible/hosts
 
-
-Example:
-
+Example Inventory
 [docker_servers]
 172.31.6.195
 172.31.6.196
@@ -40,29 +42,53 @@ Example:
 172.31.6.198
 
 
-Save → Ctrl + O, Exit → Ctrl + X
+Save the file:
 
-2️⃣ Test Ansible Connectivity
+Ctrl + O → Enter
+
+Ctrl + X
+
+2️⃣ Verify Inventory Hosts
 ansible all --list-hosts
 
 
-Then:
+This confirms that Ansible can read the inventory correctly.
 
+3️⃣ Test Connectivity to Managed Nodes
 ansible docker_servers -m ping
 
-
-Expected:
-
+Expected Output
 SUCCESS => pong
 
-3️⃣ (Optional) If Ping Fails – Add SSH User
+4️⃣ (Optional) Fix SSH User Issues
 
-Edit hosts file:
+If ping fails due to authentication, specify the SSH user in the inventory:
 
 [docker_servers]
 172.31.6.195 ansible_user=ubuntu
 172.31.6.196 ansible_user=ubuntu
+172.31.6.197 ansible_user=ubuntu
+172.31.6.198 ansible_user=ubuntu
 
-4️⃣ Install Docker Using Ansible (Next Big Step)
 
-You are now 100% ready to run playbooks.
+Re-run the ping test afterward.
+
+🚀 Next Objective
+
+With Ansible installed and connectivity verified, the environment is now ready to:
+
+Run playbooks
+
+Install Docker using Ansible
+
+Automate configuration and deployments
+
+Summary
+
+✅ Ansible installed and verified
+
+✅ Inventory configured
+
+✅ SSH connectivity tested
+
+✅ Ready for automation workflows
