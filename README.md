@@ -30,9 +30,18 @@ Ansible → Agentless, push-based, YAML, simple
 
 Chef → Agent-based, pull-based, Ruby DSL, more control
 ---
+
 🧠 Analogy (best way to remember)
 🟢 Ansible = “Remote Control”
 
 You directly tell servers:
 
 “Run this configuration now”
+---
+### 🧠 Final Summary
+Aspect	Ansible	Chef
+Type	Agentless	Agent-based
+Model	Push	Pull
+Language	YAML	Ruby
+Setup	Simple	Complex
+Use case	Quick automation	Continuous management
