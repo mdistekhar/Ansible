@@ -31,12 +31,11 @@ Ansible → Agentless, push-based, YAML, simple
 Chef → Agent-based, pull-based, Ruby DSL, more control
 ---
 
-🧠 Analogy (best way to remember)
+🧠 Analogy 
+
 🟢 Ansible = “Remote Control”
 
 You directly tell servers:
-
-“Run this configuration now”
 ---
 ### 🧠 Final Summary
 🔐 Security
