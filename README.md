@@ -299,7 +299,7 @@ Recipe → Playbook
 ```
 
 ---
-###🎯 What is Ansible Tower?
+### 🎯 What is Ansible Tower?
 
 Ansible Tower is a web-based UI and management layer for Ansible that helps you automate, control, and scale Ansible operations.
 
