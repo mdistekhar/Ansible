@@ -266,7 +266,7 @@ Ansible enables simple, agentless automation using SSH and YAML-based playbooks.
 
 ---
 
-🎯 What is an Ansible Playbook?
+### 🎯 What is an Ansible Playbook?
 
 An Ansible Playbook is a YAML file that defines a set of tasks to be executed on target servers.
 
