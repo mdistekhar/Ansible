@@ -39,9 +39,8 @@ You directly tell servers:
 “Run this configuration now”
 ---
 ### 🧠 Final Summary
-Aspect	Ansible	Chef
-Type	Agentless	Agent-based
-Model	Push	Pull
-Language	YAML	Ruby
-Setup	Simple	Complex
-Use case	Quick automation	Continuous management
+🔐 Security
+
+Ansible → SSH-based authentication
+
+Chef → Certificate-based secure communication
