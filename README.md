@@ -297,3 +297,10 @@ Recipe → Playbook
         name: nginx
         state: present
 ```
+
+---
+###🎯 What is Ansible Tower?
+
+Ansible Tower is a web-based UI and management layer for Ansible that helps you automate, control, and scale Ansible operations.
+
+It is the enterprise version of Ansible (now called AWX / Red Hat Ansible Automation Platform).
