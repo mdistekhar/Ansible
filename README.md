@@ -23,3 +23,16 @@ sudo apt install ansible -y
 ```
 ansible --version
 ```
+### Difference between Ansible and Chef :-
+  🎯 Core Difference (quick mental model)
+
+Ansible → Agentless, push-based, YAML, simple
+
+Chef → Agent-based, pull-based, Ruby DSL, more control
+---
+🧠 Analogy (best way to remember)
+🟢 Ansible = “Remote Control”
+
+You directly tell servers:
+
+“Run this configuration now”
