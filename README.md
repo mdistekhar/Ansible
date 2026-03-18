@@ -304,3 +304,18 @@ Recipe → Playbook
 Ansible Tower is a web-based UI and management layer for Ansible that helps you automate, control, and scale Ansible operations.
 
 It is the enterprise version of Ansible (now called AWX / Red Hat Ansible Automation Platform).
+
+🧠 Simple Analogy
+🟢 Ansible (CLI)
+🔵 Ansible Tower ( Control dashboard )
+
+---
+
+⚙️ What Ansible Tower Provides
+1. 🌐 Web UI
+
+Run playbooks from browser
+
+No need to remember CLI commands
+
+----
