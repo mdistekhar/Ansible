@@ -13,9 +13,9 @@ Ansible automates infrastructure by running tasks over SSH using simple YAML fil
 
 Ansible has been installed successfully and is working as expected.
 
-### Verification Command
+### Install :-
 ```bash
 sudo apt update
 sudo apt install ansible -y
 
-```bash
+```
