@@ -266,3 +266,34 @@ Ansible enables simple, agentless automation using SSH and YAML-based playbooks.
 
 ---
 
+🎯 What is an Ansible Playbook?
+
+An Ansible Playbook is a YAML file that defines a set of tasks to be executed on target servers.
+
+It’s the main way you automate things in Ansible.
+
+🧠 Simple Analogy
+
+Think of a playbook like a recipe:
+
+Ingredients → Servers (hosts)
+
+Steps → Tasks
+
+Recipe → Playbook
+
+👉 You follow the recipe → dish gets prepared
+👉 Ansible follows playbook → servers get configured
+
+⚙️ Basic Structure of a Playbook
+```
+- name: Install nginx
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Install nginx package
+      apt:
+        name: nginx
+        state: present
+```
