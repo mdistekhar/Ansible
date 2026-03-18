@@ -1,8 +1,11 @@
-# Ansible Setup and Verification
+# What is  Ansible 
 
 ## Overview
-This project documents the successful installation and verification of **Ansible** on an Ubuntu control node.  
-It also outlines the required steps to configure inventory, test connectivity, and prepare for running playbooks (e.g., Docker installation).
+Ansible is an open-source IT automation tool used to configure systems, deploy applications, and orchestrate workflows—without installing any agent on target machines.
+
+🎯 One-line Definition
+
+Ansible automates infrastructure by running tasks over SSH using simple YAML files.
 
 ---
 
