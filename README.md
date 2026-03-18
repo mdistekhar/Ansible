@@ -44,3 +44,225 @@ You directly tell servers:
 Ansible → SSH-based authentication
 
 Chef → Certificate-based secure communication
+
+---
+
+# Ansible Setup & Server Connection Guide
+
+## 📌 Overview
+
+This guide explains how to:
+
+* Install Ansible
+* Configure SSH access
+* Create an inventory file
+* Connect and manage remote servers
+
+---
+
+## 🧱 Prerequisites
+
+* Linux/macOS system (Control Node)
+* Python installed (usually pre-installed)
+* SSH access to target servers
+* Target servers (Linux-based)
+
+---
+
+## ⚙️ Step 1: Install Ansible
+
+### Ubuntu/Debian:
+
+```bash
+sudo apt update
+sudo apt install ansible -y
+```
+
+### macOS (Homebrew):
+
+```bash
+brew install ansible
+```
+
+### Using pip:
+
+```bash
+pip install ansible
+```
+
+### Verify Installation:
+
+```bash
+ansible --version
+```
+
+---
+
+## 🔐 Step 2: Configure SSH Access
+
+### Generate SSH Key:
+
+```bash
+ssh-keygen
+```
+
+### Copy Key to Remote Server:
+
+```bash
+ssh-copy-id user@server-ip
+```
+
+### Test SSH Connection:
+
+```bash
+ssh user@server-ip
+```
+
+---
+
+## 📄 Step 3: Create Inventory File
+
+Create a file named `inventory.ini`:
+
+```ini
+[web]
+server1 ansible_host=192.168.1.10 ansible_user=ubuntu
+
+[db]
+server2 ansible_host=192.168.1.20 ansible_user=ubuntu
+
+[all:vars]
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+ansible_python_interpreter=/usr/bin/python3
+```
+
+---
+
+## 🧪 Step 4: Test Connection
+
+```bash
+ansible all -i inventory.ini -m ping
+```
+
+### Expected Output:
+
+```json
+server1 | SUCCESS => {
+    "ping": "pong"
+}
+```
+
+---
+
+## ⚡ Step 5: Run Ad-hoc Commands
+
+```bash
+ansible all -i inventory.ini -m shell -a "uptime"
+```
+
+---
+
+## 🚀 Step 6: Create and Run a Playbook
+
+### Create `install-nginx.yml`:
+
+```yaml
+- name: Install Nginx
+  hosts: web
+  become: yes
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+```
+
+### Run Playbook:
+
+```bash
+ansible-playbook -i inventory.ini install-nginx.yml
+```
+
+---
+
+## ☁️ AWS EC2 Example
+
+Inventory file with `.pem` key:
+
+```ini
+[web]
+ec2-instance ansible_host=3.x.x.x ansible_user=ubuntu
+
+[all:vars]
+ansible_ssh_private_key_file=~/mykey.pem
+```
+
+---
+
+## ⚠️ Troubleshooting
+
+### Permission Denied:
+
+```bash
+chmod 400 mykey.pem
+```
+
+### Host Unreachable:
+
+* Check Security Group (Port 22 open)
+* Verify IP address
+
+### Python Not Found:
+
+```bash
+ansible all -m raw -a "sudo apt install python3 -y"
+```
+
+---
+
+## 🧠 Key Concepts
+
+| Concept      | Description                        |
+| ------------ | ---------------------------------- |
+| Control Node | Machine where Ansible is installed |
+| Managed Node | Target servers                     |
+| Inventory    | List of servers                    |
+| Module       | Task execution unit                |
+| Playbook     | YAML automation file               |
+
+---
+
+## 🎯 Summary
+
+* Install Ansible on one machine (control node)
+* Configure SSH access to servers
+* Define servers in inventory file
+* Run commands or playbooks to automate tasks
+
+---
+
+## 📚 Useful Commands
+
+```bash
+ansible all -m ping
+ansible all -m shell -a "df -h"
+ansible-playbook playbook.yml
+```
+
+---
+
+## ✅ Best Practices
+
+* Use SSH keys instead of passwords
+* Organize inventory by environment (dev/staging/prod)
+* Use roles for reusable configurations
+* Store secrets securely (Ansible Vault)
+
+---
+
+## 🏁 Conclusion
+
+Ansible enables simple, agentless automation using SSH and YAML-based playbooks. Once configured, it can efficiently manage multiple servers at scale.
+
+---
+
