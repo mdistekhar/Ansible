@@ -9,7 +9,7 @@ Ansible automates infrastructure by running tasks over SSH using simple YAML fil
 
 ---
 
-## ✅ Ansible Installation Status
+🐧 1) Install Ansible on Linux
 
 Ansible has been installed successfully and is working as expected.
 
@@ -17,4 +17,4 @@ Ansible has been installed successfully and is working as expected.
 ```bash
 ansible --version
 
-
+🐧 1) Install Ansible on Linux
