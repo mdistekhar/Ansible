@@ -15,6 +15,7 @@ Ansible has been installed successfully and is working as expected.
 
 ### Verification Command
 ```bash
-ansible --version
+sudo apt update
+sudo apt install ansible -y
 
-🐧 1) Install Ansible on Linux
+```bash
