@@ -29,6 +29,7 @@ ansible --version
 Ansible → Agentless, push-based, YAML, simple
 
 Chef → Agent-based, pull-based, Ruby DSL, more control
+
 ---
 
 🧠 Analogy 
