@@ -1,0 +1,11 @@
+Run this:
+```
+sudo apt update
+sudo apt install -y ansible
+
+```
+
+Verify:
+ ansible --version
+
+```
